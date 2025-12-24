@@ -3,30 +3,37 @@
 <head>
   <meta charset="utf-8">
   <title>Prédiction du modèle</title>
+
+  <!-- Lien vers le CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-<h1>Prédiction à partir du modèle</h1>
+<div class="card">
 
-<p>Remplis les valeurs ci-dessous puis clique sur “Lancer le modèle”.</p>
+  <h1>Prédiction à partir du modèle</h1>
 
-<label>NO3 consommé :</label><br>
-<input id="no3" type="number" step="any"><br><br>
+  <p>Remplis les valeurs ci-dessous puis clique sur <strong>Lancer le modèle</strong>.</p>
 
-<label>Eau consommée :</label><br>
-<input id="eau" type="number" step="any"><br><br>
+  <label>NO3 consommé :</label><br>
+  <input id="no3" type="number" step="any"><br><br>
 
-<label>Diamètre :</label><br>
-<input id="diametre" type="number" step="any"><br><br>
+  <label>Eau consommée :</label><br>
+  <input id="eau" type="number" step="any"><br><br>
 
-<label>Hauteur :</label><br>
-<input id="hauteur" type="number" step="any"><br><br>
+  <label>Diamètre :</label><br>
+  <input id="diametre" type="number" step="any"><br><br>
 
-<button onclick="lancer()">Lancer le modèle</button>
+  <label>Hauteur :</label><br>
+  <input id="hauteur" type="number" step="any"><br><br>
 
-<h2>Résultats</h2>
-<pre id="resultat"></pre>
+  <button onclick="lancer()">Lancer le modèle</button>
+
+  <h2>Résultats</h2>
+  <pre id="resultat"></pre>
+
+</div>
 
 <script>
 function lancer() {
@@ -61,5 +68,3 @@ function lancer() {
 
 </body>
 </html>
-
-
