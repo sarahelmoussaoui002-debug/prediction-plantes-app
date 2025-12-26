@@ -3,62 +3,57 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
 }
 
-/* ===== LOGOS EN HAUT ===== */
+/* ===== BARRE DE LOGOS ===== */
 .top-logos {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 150px;                /* PLUS HAUT */
   z-index: 1000;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 10px 30px;
+  padding: 15px 40px;
   box-sizing: border-box;
 
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(6px);
 }
 
+/* styles communs */
 .top-logos .logo {
-  display: block;
   width: auto;
   object-fit: contain;
 }
 
-/* tailles spécifiques */
+/* logos secondaires (labo + unif) */
 .logo-labo,
 .logo-unif {
-  max-height: 45px;
-  max-width: 180px;
+  max-height: 90px;             /* AVANT ~45px */
+  max-width: 260px;
 }
 
+/* logo principal (projet) */
 .logo-projet {
-  max-height: 75px;
+  max-height: 130px;            /* TRÈS GRAND */
 }
 
 /* ===== CARTE CENTRALE ===== */
 .container {
   max-width: 600px;
-  margin: 160px auto;
+  margin: 220px auto;            /* descend la carte */
   padding: 30px;
 
   background: rgba(255, 255, 255, 0.92);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* ===== TITRE ===== */
-h1 {
-  margin-top: 0;
 }
 
 /* ===== FORMULAIRE ===== */
@@ -72,7 +67,6 @@ input {
   font-size: 16px;
 }
 
-/* ===== BOUTON ===== */
 button {
   margin-top: 10px;
   padding: 12px;
@@ -88,7 +82,6 @@ button:hover {
   background: #1e40af;
 }
 
-/* ===== RÉSULTATS ===== */
 pre {
   background: #eef2f7;
   padding: 12px;
