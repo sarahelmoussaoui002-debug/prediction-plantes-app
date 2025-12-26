@@ -4,35 +4,32 @@
   <meta charset="UTF-8">
   <title>AgroCalculator</title>
 
-  <!-- CSS (avec cache-bust) -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=50">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=51">
 </head>
 
 <body class="home">
 
   <!-- LOGOS EN HAUT -->
   <div class="top-logos">
-    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
-    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
-    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo-unif">
+    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo">
+    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet">
+    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université">
   </div>
 
   <!-- CONTENU CENTRAL -->
   <main class="hero">
-    <!-- Image AgroCalculator -->
+    <!-- Image AgroCalculator (nom correct) -->
     <img
-      src="{{ url_for('static', filename='img/agrocalculator.png') }}"
+      src="{{ url_for('static', filename='img/agrocalculator-title.png') }}"
       alt="AgroCalculator"
-      class="hero-title-img"
+      class="hero-img"
     >
 
-    <!-- Texte sous le logo -->
     <p class="hero-subtitle">
       AgroCalculator is an innovative digital tool designed<br>
       to simplify agronomic measurements
     </p>
 
-    <!-- Bouton -->
     <a href="{{ url_for('tableau') }}" class="hero-cta">
       CLICK HERE
     </a>
