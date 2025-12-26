@@ -8,12 +8,12 @@ body {
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
 
-  /* espace pour la barre des logos */
-  padding-top: 120px;
+  /* espace pour la barre des logos (barre plus haute) */
+  padding-top: 160px;
   position: relative;
 }
 
-/* voile sombre léger pour lisibilité */
+/* voile sombre pour faire ressortir la photo */
 body::before {
   content: "";
   position: fixed;
@@ -28,7 +28,7 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 140px;               /* IMPORTANT : plus haut */
   z-index: 1000;
 
   display: grid;
@@ -42,20 +42,31 @@ body::before {
   backdrop-filter: blur(6px);
 }
 
-/* LOGOS — tailles augmentées de 50 % */
-.logo-labo {
-  justify-self: start;
-  height: 75px;      /* 50 → 75 */
+/* ================== FORÇAGE DES LOGOS ================== */
+/* annule toute limite cachée */
+.top-logos img {
+  display: block;
+  max-height: none !important;
+  max-width: none !important;
+  width: auto;
+  object-fit: contain;
 }
 
-.logo-projet {
-  justify-self: center;
-  height: 112px;     /* 75 → 112 */
+/* logos partenaires (+50%) */
+.logo-labo {
+  justify-self: start;
+  height: 75px !important;     /* 50 → 75 */
 }
 
 .logo-unif {
   justify-self: end;
-  height: 75px;      /* 50 → 75 */
+  height: 75px !important;     /* 50 → 75 */
+}
+
+/* logo principal (+50%) */
+.logo-projet {
+  justify-self: center;
+  height: 112px !important;    /* 75 → 112 */
 }
 
 /* ================== CARTE CENTRALE ================== */
@@ -111,29 +122,25 @@ pre {
 @media (max-width: 768px) {
 
   body {
-    padding-top: 220px;
+    padding-top: 260px;
   }
 
   .top-logos {
     height: auto;
     grid-template-columns: 1fr;
-    row-gap: 12px;
+    row-gap: 14px;
     padding: 15px 20px;
   }
 
   .logo-labo,
-  .logo-projet,
   .logo-unif {
     justify-self: center;
-  }
-
-  .logo-labo,
-  .logo-unif {
-    height: 55px;
+    height: 60px !important;
   }
 
   .logo-projet {
-    height: 85px;
+    justify-self: center;
+    height: 90px !important;
   }
 
   .container {
