@@ -1,8 +1,9 @@
-/* ===== ARRIÈRE-PLAN GLOBAL ===== */
+/* ===== ARRIÈRE-PLAN ===== */
 body {
   margin: 0;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
 }
@@ -14,46 +15,50 @@ body {
   left: 0;
   width: 100%;
   height: 100px;
-  z-index: 10;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 30px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
 }
 
-/* style commun */
 .top-logos .logo {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  display: block;
+  width: auto;
+  object-fit: contain;
 }
 
-/* logos secondaires */
-.top-logos .left,
-.top-logos .right {
+/* tailles spécifiques */
+.logo-labo,
+.logo-unif {
   max-height: 45px;
+  max-width: 180px;
 }
 
-/* logo principal */
-.top-logos .center {
+.logo-projet {
   max-height: 75px;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
-/* positions horizontales */
-.top-logos .left {
-  left: 30px;
-}
-
-.top-logos .right {
-  right: 30px;
-}
-
-/* ===== CONTENEUR CENTRAL ===== */
+/* ===== CARTE CENTRALE ===== */
 .container {
   max-width: 600px;
-  margin: 170px auto;
+  margin: 160px auto;
   padding: 30px;
+
   background: rgba(255, 255, 255, 0.92);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== TITRE ===== */
+h1 {
+  margin-top: 0;
 }
 
 /* ===== FORMULAIRE ===== */
