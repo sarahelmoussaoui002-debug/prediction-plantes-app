@@ -9,33 +9,27 @@ body {
   background-size: cover;
 }
 
-/* ===== LOGOS EN HAUT (gauche / centre / droite) ===== */
+/* ===== LOGOS EN HAUT (Gauche / Centre / Droite) - VERSION ROBUSTE ===== */
 .top-logos {
-  position: relative;
   width: 100%;
-  height: 90px;          /* même ligne pour tous les logos */
-  padding: 20px 30px;
+  padding: 15px 30px;
   box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .top-logos .logo {
   max-height: 70px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  height: auto;
+  width: auto;
 }
 
-.top-logos .left {
-  left: 30px;
-}
-
+/* Force le logo projet au centre */
 .top-logos .center {
-  left: 50%;
-  transform: translate(-50%, -50%); /* centre exact en haut */
-}
-
-.top-logos .right {
-  right: 30px;
+  margin: 0 auto;
 }
 
 /* ===== CONTENEUR CENTRAL ===== */
@@ -59,6 +53,10 @@ h1 {
 .form {
   display: grid;
   gap: 10px;
+}
+
+label {
+  font-weight: 600;
 }
 
 input {
@@ -87,4 +85,5 @@ pre {
   background: #eef2f7;
   padding: 12px;
   border-radius: 6px;
+  white-space: pre-wrap;
 }
