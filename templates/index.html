@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <title>Prédiction à partir du modèle</title>
 
-  <!-- LIGNE CRITIQUE : BON CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=4">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=50">
 </head>
 
 <body>
 
-  <!-- ===== LOGOS EN HAUT ===== -->
+  <!-- LOGOS EN HAUT (identiques à l’accueil) -->
   <div class="top-logos">
     <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
     <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
     <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo-unif">
   </div>
 
-  <!-- ===== CARTE CENTRALE ===== -->
+  <!-- CARTE -->
   <div class="container">
     <h1>Prédiction à partir du modèle</h1>
 
@@ -30,6 +30,11 @@
     </form>
 
     <pre id="resultat">Résultats</pre>
+
+    <!-- Retour accueil (optionnel mais recommandé) -->
+    <div style="text-align:center; margin-top:20px;">
+      <a href="{{ url_for('home') }}">← Retour à l’accueil</a>
+    </div>
   </div>
 
   <!-- JS -->
