@@ -13,7 +13,7 @@ body {
   position: relative;
 }
 
-/* voile sombre léger pour lisibilité */
+/* voile sombre léger */
 body::before {
   content: "";
   position: fixed;
@@ -39,30 +39,29 @@ body::before {
   box-sizing: border-box;
 }
 
-/* forcer les tailles (évite toute limite cachée) */
+/* IMPORTANT : annule toute limite cachée */
 .top-logos img {
   display: block;
-  max-height: none !important;
-  max-width: none !important;
   width: auto;
+  max-width: none !important;
+  max-height: none !important;
   object-fit: contain;
 }
 
-/* logos partenaires (+50 %) */
+/* ===== TAILLES DES LOGOS (+50 %) ===== */
 .logo-labo {
   justify-self: start;
-  height: 75px;      /* 50 → 75 */
+  height: 75px !important;      /* 50 → 75 */
 }
 
 .logo-unif {
   justify-self: end;
-  height: 75px;      /* 50 → 75 */
+  height: 75px !important;      /* 50 → 75 */
 }
 
-/* logo principal (+50 %) */
 .logo-projet {
   justify-self: center;
-  height: 112px;     /* 75 → 112 */
+  height: 112px !important;     /* 75 → 112 */
 }
 
 /* ================== CARTE CENTRALE ================== */
@@ -131,12 +130,12 @@ pre {
   .logo-labo,
   .logo-unif {
     justify-self: center;
-    height: 60px;
+    height: 60px !important;
   }
 
   .logo-projet {
     justify-self: center;
-    height: 90px;
+    height: 90px !important;
   }
 
   .container {
