@@ -7,11 +7,12 @@ body {
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
 
-  /* espace pour logos (plus grand) */
-  padding-top: 240px;
+  /* espace pour logos DOUBLÉS */
+  padding-top: 320px;
   position: relative;
 }
 
+/* voile léger */
 body::before {
   content: "";
   position: fixed;
@@ -27,8 +28,8 @@ body::before {
   left: 0;
   width: 100%;
 
-  /* IMPORTANT : assez haut pour gros logos */
-  height: 220px;
+  /* hauteur adaptée aux logos x2 */
+  height: 300px;
 
   z-index: 1000;
 
@@ -40,7 +41,7 @@ body::before {
   box-sizing: border-box;
 }
 
-/* annule toute limite cachée */
+/* annule toute contrainte */
 .top-logos img {
   display: block;
   width: auto;
@@ -49,20 +50,20 @@ body::before {
   object-fit: contain;
 }
 
-/* ===== TAILLES TRÈS VISIBLES ===== */
+/* ===== LOGOS x2 ===== */
 .logo-labo {
   justify-self: start;
-  height: 120px !important;
+  height: 160px !important;
 }
 
 .logo-unif {
   justify-self: end;
-  height: 120px !important;
+  height: 160px !important;
 }
 
 .logo-projet {
   justify-self: center;
-  height: 180px !important;
+  height: 240px !important;
 }
 
 /* ================== CARTE CENTRALE ================== */
@@ -116,26 +117,27 @@ pre {
 
 /* ================== RESPONSIVE MOBILE ================== */
 @media (max-width: 768px) {
+
   body {
-    padding-top: 340px;
+    padding-top: 420px;
   }
 
   .top-logos {
     height: auto;
     grid-template-columns: 1fr;
-    row-gap: 18px;
+    row-gap: 20px;
     padding: 20px;
   }
 
   .logo-labo,
   .logo-unif {
     justify-self: center;
-    height: 90px !important;
+    height: 120px !important;
   }
 
   .logo-projet {
     justify-self: center;
-    height: 140px !important;
+    height: 180px !important;
   }
 
   .container {
