@@ -1,200 +1,47 @@
-/* ================== GLOBAL ================== */
-body {
+/* ===== RESET ===== */
+* {
   margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-
-  background: url("../img/background.png") no-repeat center center fixed;
-  background-size: cover;
-
-  /* espace pour logos DOUBLÉS */
-  padding-top: 320px;
-  position: relative;
-}
-
-/* voile léger */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: -1;
-}
-
-/* ================== LOGOS (SANS BARRE) ================== */
-.top-logos {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  /* hauteur adaptée aux logos x2 */
-  height: 300px;
-
-  z-index: 1000;
-
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-
-  padding: 0 40px;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* annule toute contrainte */
-.top-logos img {
-  display: block;
-  width: auto;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: contain;
+/* ===== BODY (fond inchangé) ===== */
+body {
+  font-family: Arial, sans-serif;
+
+  /* ON NE TOUCHE PAS AU FOND */
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
 }
 
-/* ===== LOGOS x2 ===== */
-.logo-labo {
-  justify-self: start;
-  height: 160px !important;
-}
-
-.logo-unif {
-  justify-self: end;
-  height: 160px !important;
-}
-
-.logo-projet {
-  justify-self: center;
-  height: 240px !important;
-}
-
-/* ================== TITRE CENTRAL (AGROCALCULATOR) ================== */
+/* ===== TITRE CENTRAL ===== */
 .hero {
-  /* centré horizontalement */
-  max-width: 900px;
-  margin: 0 auto;
-
-  /* on le baisse un peu sous les logos */
-  margin-top: 40px;
-
+  position: fixed;
+  top: 55%;                 /* ↓ descend un peu le titre */
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
   text-align: center;
+  z-index: 10;
   color: #2f3e46;
-
-  /* au-dessus du fond, sous les logos */
-  position: relative;
-  z-index: 2;
 }
 
+/* TITRE */
 .hero-title {
   font-size: 72px;
-  font-weight: bold;
-  margin: 0;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
+/* SOUS-TITRE */
 .hero-subtitle {
-  margin-top: 16px;
+  margin-top: 18px;
   font-size: 20px;
-  line-height: 1.4;
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* ================== CARTE CENTRALE ================== */
-.container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 30px;
-
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 14px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-
-  /* pour être au-dessus du fond */
-  position: relative;
-  z-index: 2;
-}
-
-/* ================== CONTENU ================== */
-h1 {
-  margin-top: 0;
-  text-align: center;
-}
-
-h2 {
-  margin-top: 0;
-  text-align: center;
-}
-
-.form {
-  display: grid;
-  gap: 10px;
-}
-
-input {
-  padding: 10px;
-  font-size: 16px;
-}
-
-button {
-  margin-top: 15px;
-  padding: 12px;
-  font-size: 16px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #1e40af;
-}
-
-pre {
-  margin-top: 15px;
-  background: #eef2f7;
-  padding: 12px;
-  border-radius: 6px;
-}
-
-/* ================== RESPONSIVE MOBILE ================== */
-@media (max-width: 768px) {
-
-  body {
-    padding-top: 420px;
-  }
-
-  .top-logos {
-    height: auto;
-    grid-template-columns: 1fr;
-    row-gap: 20px;
-    padding: 20px;
-  }
-
-  .logo-labo,
-  .logo-unif {
-    justify-self: center;
-    height: 120px !important;
-  }
-
-  .logo-projet {
-    justify-self: center;
-    height: 180px !important;
-  }
-
-  .hero {
-    margin-top: 20px;
-    padding: 0 16px;
-  }
-
-  .hero-title {
-    font-size: 44px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-  }
-
-  .container {
-    margin: 20px;
-  }
 }

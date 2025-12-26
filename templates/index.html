@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>AgroCalculator</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=51">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-
-  <!-- LOGOS EN HAUT -->
-  <div class="top-logos">
-    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
-    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
-    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo-unif">
-  </div>
 
   <!-- ===== TITRE CENTRAL ===== -->
   <div class="hero">
@@ -24,28 +17,6 @@
       AgroCalculator is an innovation digital tool designed to simplify agronomic measurements
     </p>
   </div>
-
-  <!-- ===== CARTE FORMULAIRE ===== -->
-  <div class="container">
-    <h2>Prédiction à partir du modèle</h2>
-
-    <form class="form" onsubmit="event.preventDefault(); lancer();">
-      <input id="no3" type="text" placeholder="NO₃ consommé">
-      <input id="eau" type="text" placeholder="Eau consommée">
-      <input id="diametre" type="text" placeholder="Diamètre">
-      <input id="hauteur" type="text" placeholder="Hauteur">
-      <button type="submit">Lancer le modèle</button>
-    </form>
-
-    <pre id="resultat">Résultats</pre>
-
-    <div style="text-align:center; margin-top:20px;">
-      <a href="{{ url_for('home') }}">← Retour à l’accueil</a>
-    </div>
-  </div>
-
-  <!-- JS -->
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
 </html>
