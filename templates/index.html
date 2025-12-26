@@ -2,24 +2,32 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Prédiction à partir du modèle</title>
+  <title>AgroCalculator</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=50">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=51">
 </head>
 
 <body>
 
-  <!-- LOGOS EN HAUT (identiques à l’accueil) -->
+  <!-- LOGOS EN HAUT -->
   <div class="top-logos">
     <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
     <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
     <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo-unif">
   </div>
 
-  <!-- CARTE -->
+  <!-- ===== TITRE CENTRAL ===== -->
+  <div class="hero">
+    <h1 class="hero-title">AgroCalculator</h1>
+    <p class="hero-subtitle">
+      AgroCalculator is an innovation digital tool designed to simplify agronomic measurements
+    </p>
+  </div>
+
+  <!-- ===== CARTE FORMULAIRE ===== -->
   <div class="container">
-    <h1>Prédiction à partir du modèle</h1>
+    <h2>Prédiction à partir du modèle</h2>
 
     <form class="form" onsubmit="event.preventDefault(); lancer();">
       <input id="no3" type="text" placeholder="NO₃ consommé">
@@ -31,7 +39,6 @@
 
     <pre id="resultat">Résultats</pre>
 
-    <!-- Retour accueil (optionnel mais recommandé) -->
     <div style="text-align:center; margin-top:20px;">
       <a href="{{ url_for('home') }}">← Retour à l’accueil</a>
     </div>

@@ -66,6 +66,38 @@ body::before {
   height: 240px !important;
 }
 
+/* ================== TITRE CENTRAL (AGROCALCULATOR) ================== */
+.hero {
+  /* centré horizontalement */
+  max-width: 900px;
+  margin: 0 auto;
+
+  /* on le baisse un peu sous les logos */
+  margin-top: 40px;
+
+  text-align: center;
+  color: #2f3e46;
+
+  /* au-dessus du fond, sous les logos */
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hero-subtitle {
+  margin-top: 16px;
+  font-size: 20px;
+  line-height: 1.4;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ================== CARTE CENTRALE ================== */
 .container {
   max-width: 600px;
@@ -75,10 +107,19 @@ body::before {
   background: rgba(255, 255, 255, 0.92);
   border-radius: 14px;
   box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+
+  /* pour être au-dessus du fond */
+  position: relative;
+  z-index: 2;
 }
 
 /* ================== CONTENU ================== */
 h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
   margin-top: 0;
   text-align: center;
 }
@@ -138,6 +179,19 @@ pre {
   .logo-projet {
     justify-self: center;
     height: 180px !important;
+  }
+
+  .hero {
+    margin-top: 20px;
+    padding: 0 16px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
   }
 
   .container {
