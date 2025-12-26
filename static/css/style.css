@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
 
   /* NOUVEL ARRIÈRE-PLAN */
-  background-image: url("/static/img/background.png");
+  background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
