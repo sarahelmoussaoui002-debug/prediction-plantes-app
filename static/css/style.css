@@ -1,18 +1,19 @@
-/* ================== GLOBAL ================== */
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
   min-height: 100vh;
   font-family: Arial, sans-serif;
 
+  /* image de fond */
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
 
-  /* espace pour logos DOUBLÉS */
-  padding-top: 320px;
+  /* espace pour la barre de logos */
+  padding-top: 120px;
   position: relative;
 }
 
-/* voile léger */
+/* voile sombre pour que la photo soit visible mais lisible */
 body::before {
   content: "";
   position: fixed;
@@ -21,16 +22,13 @@ body::before {
   z-index: -1;
 }
 
-/* ================== LOGOS (SANS BARRE) ================== */
+/* ===== BARRE LOGOS ===== */
 .top-logos {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
-  /* hauteur adaptée aux logos x2 */
-  height: 300px;
-
+  height: 100px;
   z-index: 1000;
 
   display: grid;
@@ -39,34 +37,34 @@ body::before {
 
   padding: 0 40px;
   box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
 }
 
-/* annule toute contrainte */
-.top-logos img {
-  display: block;
-  width: auto;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: contain;
-}
-
-/* ===== LOGOS x2 ===== */
+/* tailles + positions */
 .logo-labo {
   justify-self: start;
-  height: 160px !important;
-}
-
-.logo-unif {
-  justify-self: end;
-  height: 160px !important;
+  height: 50px;
+  display: block;
+  object-fit: contain;
 }
 
 .logo-projet {
   justify-self: center;
-  height: 240px !important;
+  height: 75px;
+  display: block;
+  object-fit: contain;
 }
 
-/* ================== CARTE CENTRALE ================== */
+.logo-unif {
+  justify-self: end;
+  height: 50px;
+  display: block;
+  object-fit: contain;
+}
+
+/* ===== CARTE ===== */
 .container {
   max-width: 600px;
   margin: 40px auto;
@@ -74,15 +72,15 @@ body::before {
 
   background: rgba(255, 255, 255, 0.92);
   border-radius: 14px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.30);
 }
 
-/* ================== CONTENU ================== */
 h1 {
   margin-top: 0;
   text-align: center;
 }
 
+/* ===== FORM ===== */
 .form {
   display: grid;
   gap: 10px;
@@ -113,34 +111,4 @@ pre {
   background: #eef2f7;
   padding: 12px;
   border-radius: 6px;
-}
-
-/* ================== RESPONSIVE MOBILE ================== */
-@media (max-width: 768px) {
-
-  body {
-    padding-top: 420px;
-  }
-
-  .top-logos {
-    height: auto;
-    grid-template-columns: 1fr;
-    row-gap: 20px;
-    padding: 20px;
-  }
-
-  .logo-labo,
-  .logo-unif {
-    justify-self: center;
-    height: 120px !important;
-  }
-
-  .logo-projet {
-    justify-self: center;
-    height: 180px !important;
-  }
-
-  .container {
-    margin: 20px;
-  }
 }

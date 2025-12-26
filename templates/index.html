@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Prédiction à partir du modèle</title>
 
   <!-- CSS -->
@@ -10,7 +10,7 @@
 
 <body>
 
-  <!-- LOGOS EN HAUT (identiques à l’accueil) -->
+  <!-- LOGOS EN HAUT -->
   <div class="top-logos">
     <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
     <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
@@ -26,19 +26,13 @@
       <input id="eau" type="text" placeholder="Eau consommée">
       <input id="diametre" type="text" placeholder="Diamètre">
       <input id="hauteur" type="text" placeholder="Hauteur">
+
       <button type="submit">Lancer le modèle</button>
     </form>
 
     <pre id="resultat">Résultats</pre>
-
-    <!-- Retour accueil (optionnel mais recommandé) -->
-    <div style="text-align:center; margin-top:20px;">
-      <a href="{{ url_for('home') }}">← Retour à l’accueil</a>
-    </div>
   </div>
 
-  <!-- JS -->
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
 </body>
 </html>
