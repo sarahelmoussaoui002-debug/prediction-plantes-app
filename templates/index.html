@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Prédiction à partir du modèle</title>
+
+  <!-- LIGNE CRITIQUE : BON CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
-  <!-- BARRE LOGOS -->
+  <!-- ===== LOGOS EN HAUT ===== -->
   <div class="top-logos">
     <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
     <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
     <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo-unif">
   </div>
 
-  <!-- CARTE CENTRALE -->
+  <!-- ===== CARTE CENTRALE ===== -->
   <div class="container">
     <h1>Prédiction à partir du modèle</h1>
 
-    <form class="form">
-      <input type="text" placeholder="NO3 consommé">
-      <input type="text" placeholder="Eau consommée">
-      <input type="text" placeholder="Diamètre">
-      <input type="text" placeholder="Hauteur">
-      <button type="button">Lancer le modèle</button>
+    <form class="form" onsubmit="event.preventDefault(); lancer();">
+      <input id="no3" type="text" placeholder="NO₃ consommé">
+      <input id="eau" type="text" placeholder="Eau consommée">
+      <input id="diametre" type="text" placeholder="Diamètre">
+      <input id="hauteur" type="text" placeholder="Hauteur">
+      <button type="submit">Lancer le modèle</button>
     </form>
 
-    <pre>Résultats</pre>
+    <pre id="resultat">Résultats</pre>
   </div>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
 </html>
