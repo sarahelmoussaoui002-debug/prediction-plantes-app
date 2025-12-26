@@ -4,28 +4,30 @@
   <meta charset="UTF-8">
   <title>Prédiction à partir du modèle</title>
 
+  <!-- IMPORTANT pour téléphone -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-  <!-- ===== LOGOS EN HAUT ===== -->
+  <!-- LOGOS -->
   <div class="top-logos">
-    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo logo-labo">
-    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo logo-projet">
-    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo logo-unif">
+    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
+    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
+    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo-unif">
   </div>
 
-  <!-- ===== CONTENEUR PRINCIPAL ===== -->
+  <!-- CONTENU -->
   <div class="container">
     <h1>Prédiction à partir du modèle</h1>
 
-    <form class="form" onsubmit="event.preventDefault(); lancer();">
-      <input id="no3" placeholder="NO3 consommé">
-      <input id="eau" placeholder="Eau consommée">
-      <input id="diametre" placeholder="Diamètre">
-      <input id="hauteur" placeholder="Hauteur">
-
-      <button type="submit">Lancer le modèle</button>
+    <form class="form">
+      <input id="no3" type="text" placeholder="NO3 consommé">
+      <input id="eau" type="text" placeholder="Eau consommée">
+      <input id="diametre" type="text" placeholder="Diamètre">
+      <input id="hauteur" type="text" placeholder="Hauteur">
+      <button type="button" onclick="lancer()">Lancer le modèle</button>
     </form>
 
     <pre id="resultat">Résultats</pre>
