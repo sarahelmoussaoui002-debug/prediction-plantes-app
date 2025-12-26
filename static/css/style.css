@@ -4,16 +4,14 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
 
-  /* image de fond */
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
 
-  /* espace pour les logos */
-  padding-top: 160px;
+  /* espace pour logos (plus grand) */
+  padding-top: 240px;
   position: relative;
 }
 
-/* voile sombre léger */
 body::before {
   content: "";
   position: fixed;
@@ -22,13 +20,16 @@ body::before {
   z-index: -1;
 }
 
-/* ================== LOGOS (SANS BARRE FLOUE) ================== */
+/* ================== LOGOS (SANS BARRE) ================== */
 .top-logos {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px;
+
+  /* IMPORTANT : assez haut pour gros logos */
+  height: 220px;
+
   z-index: 1000;
 
   display: grid;
@@ -39,7 +40,7 @@ body::before {
   box-sizing: border-box;
 }
 
-/* IMPORTANT : annule toute limite cachée */
+/* annule toute limite cachée */
 .top-logos img {
   display: block;
   width: auto;
@@ -48,20 +49,20 @@ body::before {
   object-fit: contain;
 }
 
-/* ===== TAILLES DES LOGOS (+50 %) ===== */
+/* ===== TAILLES TRÈS VISIBLES ===== */
 .logo-labo {
   justify-self: start;
-  height: 75px !important;      /* 50 → 75 */
+  height: 120px !important;
 }
 
 .logo-unif {
   justify-self: end;
-  height: 75px !important;      /* 50 → 75 */
+  height: 120px !important;
 }
 
 .logo-projet {
   justify-self: center;
-  height: 112px !important;     /* 75 → 112 */
+  height: 180px !important;
 }
 
 /* ================== CARTE CENTRALE ================== */
@@ -115,27 +116,26 @@ pre {
 
 /* ================== RESPONSIVE MOBILE ================== */
 @media (max-width: 768px) {
-
   body {
-    padding-top: 260px;
+    padding-top: 340px;
   }
 
   .top-logos {
     height: auto;
     grid-template-columns: 1fr;
-    row-gap: 14px;
-    padding: 15px 20px;
+    row-gap: 18px;
+    padding: 20px;
   }
 
   .logo-labo,
   .logo-unif {
     justify-self: center;
-    height: 60px !important;
+    height: 90px !important;
   }
 
   .logo-projet {
     justify-self: center;
-    height: 90px !important;
+    height: 140px !important;
   }
 
   .container {
