@@ -7,71 +7,23 @@ body {
   background-size: cover;
 }
 
-/* ===== BARRE DE LOGOS (FORCÉE) ===== */
+/* ===== LOGOS EN HAUT (SANS BARRE, SANS FLOU) ===== */
 .top-logos {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 160px !important;
+  height: 270px;              /* +50 % (avant ~180px) */
   z-index: 1000;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px 50px;
-  background: rgba(255,255,255,0.7);
-}
-
-/* FORCE ABSOLUE DES TAILLES */
-.top-logos img {
-  width: auto !important;
-  height: auto !important;
-}
-
-.logo-projet {
-  max-height: 150px !important;
-}
-
-.logo-labo,
-.logo-unif {
-  max-height: 100px !important;
-}
-
-/* ===== FORMULAIRE ===== */
-.form {
-  display: grid;
-  gap: 10px;
-}
-
-/* ===== ARRIÈRE-PLAN ===== */
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-
-  background: url("../img/background.png") no-repeat center center fixed;
-  background-size: cover;
-}
-
-/* ===== BARRE DE LOGOS (SANS FLOU) ===== */
-.top-logos {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 180px;          /* hauteur suffisante pour grands logos */
-  z-index: 1000;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 20px 50px;
+  padding: 30px 60px;
   box-sizing: border-box;
 
-  background: transparent;   /* PAS DE FLOU */
+  background: none;           /* SUPPRESSION TOTALE DE LA BARRE */
 }
 
 /* règle commune */
@@ -80,21 +32,21 @@ body {
   object-fit: contain;
 }
 
-/* logos secondaires */
+/* logos secondaires : +50 % */
 .logo-labo,
 .logo-unif {
-  height: 120px;          /* GRAND */
+  height: 180px;              /* avant 120px → +50 % */
 }
 
-/* logo principal */
+/* logo principal : +50 % */
 .logo-projet {
-  height: 160px;          /* TRÈS GRAND */
+  height: 240px;              /* avant 160px → +50 % */
 }
 
 /* ===== CARTE CENTRALE ===== */
 .container {
   max-width: 600px;
-  margin: 280px auto;     /* décale sous les logos */
+  margin: 360px auto;         /* descend la carte sous les logos */
   padding: 30px;
 
   background: rgba(255, 255, 255, 0.92);
