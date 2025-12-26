@@ -1,47 +1,61 @@
-/* ===== RESET ===== */
-* {
+/* RESET */
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY (fond inchangé) ===== */
-body {
-  font-family: Arial, sans-serif;
-
-  /* ON NE TOUCHE PAS AU FOND */
+/* FOND — ON NE TOUCHE PLUS */
+body{
+  min-height: 100vh;
   background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===== TITRE CENTRAL ===== */
-.hero {
-  position: fixed;
-  top: 55%;                 /* ↓ descend un peu le titre */
+/* LOGOS EN HAUT */
+.top-logos{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 20;
+}
+
+.top-logos img{
+  height: 70px;
+}
+
+/* TITRE AU CENTRE */
+.hero{
+  position: absolute;
+  top: 58%;              /* baisse le bloc */
   left: 50%;
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%);
   text-align: center;
   z-index: 10;
-  color: #2f3e46;
 }
 
-/* TITRE */
-.hero-title {
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 1.1;
+/* IMAGE AGROCALCULATOR */
+.hero-img{
+  width: min(900px, 90vw);
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-/* SOUS-TITRE */
-.hero-subtitle {
-  margin-top: 18px;
+/* TEXTE SOUS LE TITRE */
+.hero-subtitle{
+  margin-top: 20px;
   font-size: 20px;
-  max-width: 720px;
+  color: #2f3e46;
+  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
 }

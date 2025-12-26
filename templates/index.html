@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>AgroCalculator</title>
@@ -10,9 +10,21 @@
 
 <body>
 
-  <!-- ===== TITRE CENTRAL ===== -->
+  <!-- LOGOS EN HAUT -->
+  <div class="top-logos">
+    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo">
+    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet">
+    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université">
+  </div>
+
+  <!-- TITRE CENTRAL -->
   <div class="hero">
-    <h1 class="hero-title">AgroCalculator</h1>
+    <img
+      src="{{ url_for('static', filename='img/agrocalculator-title.png') }}"
+      alt="AgroCalculator"
+      class="hero-img"
+    >
+
     <p class="hero-subtitle">
       AgroCalculator is an innovation digital tool designed to simplify agronomic measurements
     </p>
