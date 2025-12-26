@@ -1,30 +1,61 @@
+/* ===== ARRIÈRE-PLAN GLOBAL ===== */
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
 
-  /* NOUVEL ARRIÈRE-PLAN */
-  background-image: url("../img/background.png");
+  /* IMAGE DE FOND (CSS dans static/css, image dans static/img) */
+  background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
-/* CARTE CENTRALE */
+/* ===== LOGOS EN HAUT (gauche / centre / droite) ===== */
+.top-logos {
+  position: relative;
+  width: 100%;
+  height: 90px;          /* même ligne pour tous les logos */
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.top-logos .logo {
+  max-height: 70px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.top-logos .left {
+  left: 30px;
+}
+
+.top-logos .center {
+  left: 50%;
+  transform: translate(-50%, -50%); /* centre exact en haut */
+}
+
+.top-logos .right {
+  right: 30px;
+}
+
+/* ===== CONTENEUR CENTRAL ===== */
 .container {
   max-width: 600px;
   margin: 80px auto;
-  background: rgba(255, 255, 255, 0.92); /* semi-transparente */
   padding: 30px;
+
+  /* carte blanche lisible */
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+/* ===== TITRE ===== */
 h1 {
   margin-top: 0;
 }
 
-/* FORMULAIRE */
+/* ===== FORMULAIRE ===== */
 .form {
   display: grid;
   gap: 10px;
@@ -35,7 +66,7 @@ input {
   font-size: 16px;
 }
 
-/* BOUTON */
+/* ===== BOUTON ===== */
 button {
   margin-top: 10px;
   padding: 12px;
@@ -51,7 +82,7 @@ button:hover {
   background: #1e40af;
 }
 
-/* RÉSULTATS */
+/* ===== ZONE RÉSULTATS ===== */
 pre {
   background: #eef2f7;
   padding: 12px;
