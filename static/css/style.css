@@ -4,68 +4,75 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
 
+  /* IMAGE DE FOND */
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
 
   /* espace pour la barre des logos */
-  padding-top: 140px;
+  padding-top: 120px;
+  position: relative;
 }
 
-/* ===== BARRE DES LOGOS (DESKTOP) ===== */
+/* VOILE POUR FAIRE RESSORTIR LA PHOTO */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25); /* ajuste 0.15–0.3 si tu veux */
+  z-index: -1;
+}
+
+/* ===== BARRE DES LOGOS ===== */
 .top-logos {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 130px;
-  z-index: 999;
+  height: 100px;
+  z-index: 1000;
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
 
-  padding: 0 30px;
+  padding: 0 40px;
   box-sizing: border-box;
 
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.35); /* transparent */
   backdrop-filter: blur(6px);
 }
 
-.top-logos img {
-  display: block;
-  object-fit: contain;
-}
-
-/* logos +50% (desktop) */
+/* LOGOS */
 .logo-labo {
   justify-self: start;
-  height: 75px;
+  height: 50px;
 }
 
 .logo-projet {
   justify-self: center;
-  height: 112px;
+  height: 75px;
 }
 
 .logo-unif {
   justify-self: end;
-  height: 75px;
+  height: 50px;
 }
 
-/* ===== CONTENEUR CENTRAL ===== */
+/* ===== CARTE CENTRALE ===== */
 .container {
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;
 
   background: rgba(255, 255, 255, 0.92);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
 }
 
-/* ===== FORMULAIRE ===== */
+/* ===== CONTENU ===== */
 h1 {
   margin-top: 0;
+  text-align: center;
 }
 
 .form {
@@ -79,7 +86,7 @@ input {
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 12px;
   font-size: 16px;
   background: #2563eb;
@@ -94,55 +101,8 @@ button:hover {
 }
 
 pre {
+  margin-top: 15px;
   background: #eef2f7;
   padding: 12px;
   border-radius: 6px;
-}
-
-/* ===== RESPONSIVE (TÉLÉPHONE) ===== */
-@media (max-width: 600px) {
-  /* barre logos devient plus petite */
-  body {
-    padding-top: 160px; /* plus haut car logos empilés */
-    background-attachment: scroll; /* évite bugs mobiles */
-  }
-
-  .top-logos {
-    height: 150px;
-    padding: 10px 16px;
-
-    /* sur mobile: 2 lignes */
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    row-gap: 10px;
-  }
-
-  /* centre (logo projet) prend toute la première ligne */
-  .logo-projet {
-    grid-column: 1 / -1;
-    justify-self: center;
-    height: 90px;
-  }
-
-  /* labo à gauche, unif à droite sur 2ème ligne */
-  .logo-labo {
-    justify-self: start;
-    height: 55px;
-  }
-
-  .logo-unif {
-    justify-self: end;
-    height: 55px;
-  }
-
-  /* container prend presque toute la largeur */
-  .container {
-    max-width: 92%;
-    margin: 20px auto;
-    padding: 18px;
-  }
-
-  input, button {
-    font-size: 16px; /* évite zoom iPhone */
-  }
 }

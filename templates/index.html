@@ -3,36 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Prédiction à partir du modèle</title>
-
-  <!-- IMPORTANT pour téléphone -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-  <!-- LOGOS -->
+  <!-- BARRE LOGOS -->
   <div class="top-logos">
     <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo" class="logo-labo">
     <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet" class="logo-projet">
     <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université" class="logo-unif">
   </div>
 
-  <!-- CONTENU -->
+  <!-- CARTE CENTRALE -->
   <div class="container">
     <h1>Prédiction à partir du modèle</h1>
 
     <form class="form">
-      <input id="no3" type="text" placeholder="NO3 consommé">
-      <input id="eau" type="text" placeholder="Eau consommée">
-      <input id="diametre" type="text" placeholder="Diamètre">
-      <input id="hauteur" type="text" placeholder="Hauteur">
-      <button type="button" onclick="lancer()">Lancer le modèle</button>
+      <input type="text" placeholder="NO3 consommé">
+      <input type="text" placeholder="Eau consommée">
+      <input type="text" placeholder="Diamètre">
+      <input type="text" placeholder="Hauteur">
+      <button type="button">Lancer le modèle</button>
     </form>
 
-    <pre id="resultat">Résultats</pre>
+    <pre>Résultats</pre>
   </div>
 
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
