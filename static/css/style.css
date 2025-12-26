@@ -7,53 +7,36 @@ body {
   background-size: cover;
 }
 
-/* ===== BARRE DE LOGOS ===== */
+/* ===== BARRE DE LOGOS (FORCÉE) ===== */
 .top-logos {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 150px;                /* PLUS HAUT */
+  height: 160px !important;
   z-index: 1000;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 15px 40px;
-  box-sizing: border-box;
-
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(6px);
+  padding: 20px 50px;
+  background: rgba(255,255,255,0.7);
 }
 
-/* styles communs */
-.top-logos .logo {
-  width: auto;
-  object-fit: contain;
+/* FORCE ABSOLUE DES TAILLES */
+.top-logos img {
+  width: auto !important;
+  height: auto !important;
 }
 
-/* logos secondaires (labo + unif) */
+.logo-projet {
+  max-height: 150px !important;
+}
+
 .logo-labo,
 .logo-unif {
-  max-height: 90px;             /* AVANT ~45px */
-  max-width: 260px;
-}
-
-/* logo principal (projet) */
-.logo-projet {
-  max-height: 130px;            /* TRÈS GRAND */
-}
-
-/* ===== CARTE CENTRALE ===== */
-.container {
-  max-width: 600px;
-  margin: 220px auto;            /* descend la carte */
-  padding: 30px;
-
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-height: 100px !important;
 }
 
 /* ===== FORMULAIRE ===== */
