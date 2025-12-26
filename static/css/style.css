@@ -9,36 +9,47 @@ body {
   background-size: cover;
 }
 
-/* ===== LOGOS EN HAUT (Gauche / Centre / Droite) - VERSION ROBUSTE ===== */
+/* ===== LOGOS EN HAUT (gauche / centre / droite) ===== */
+/* Version corrigée : le centre est VRAIMENT centré, même si les logos gauche/droite n'ont pas la même largeur */
 .top-logos {
+  position: relative;
   width: 100%;
+  height: 90px;
   padding: 15px 30px;
   box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  z-index: 10;
 }
 
+/* style commun */
 .top-logos .logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   max-height: 70px;
   height: auto;
   width: auto;
 }
 
-/* Force le logo projet au centre */
+/* positions */
+.top-logos .left {
+  left: 30px;
+}
+
 .top-logos .center {
-  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-logos .right {
+  right: 30px;
 }
 
 /* ===== CONTENEUR CENTRAL ===== */
 .container {
   max-width: 600px;
-  margin: 80px auto;
+  margin: 140px auto 80px; /* descendu pour laisser la place aux logos */
   padding: 30px;
 
-  /* carte blanche lisible */
   background: rgba(255, 255, 255, 0.92);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);

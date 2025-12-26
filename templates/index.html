@@ -2,9 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prédiction du modèle</title>
 
-  <!-- Lien CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -23,26 +24,26 @@
     <p>Remplis les valeurs puis clique sur <strong>Lancer le modèle</strong>.</p>
 
     <div class="form">
-      <label>NO₃ consommé</label>
-      <input id="no3" type="number" step="any">
+      <label for="no3">NO₃ consommé</label>
+      <input id="no3" type="number" step="any" inputmode="decimal" placeholder="Ex: 12.5">
 
-      <label>Eau consommée</label>
-      <input id="eau" type="number" step="any">
+      <label for="eau">Eau consommée</label>
+      <input id="eau" type="number" step="any" inputmode="decimal" placeholder="Ex: 0.8">
 
-      <label>Diamètre</label>
-      <input id="diametre" type="number" step="any">
+      <label for="diametre">Diamètre</label>
+      <input id="diametre" type="number" step="any" inputmode="decimal" placeholder="Ex: 3.2">
 
-      <label>Hauteur</label>
-      <input id="hauteur" type="number" step="any">
+      <label for="hauteur">Hauteur</label>
+      <input id="hauteur" type="number" step="any" inputmode="decimal" placeholder="Ex: 18.0">
 
-      <button onclick="lancer()">Lancer le modèle</button>
+      <button id="btnPredict" type="button" onclick="lancer()">Lancer le modèle</button>
     </div>
 
     <h2>Résultats</h2>
-    <pre id="resultat"></pre>
+    <pre id="resultat">Aucun résultat pour le moment.</pre>
   </div>
 
-  <!-- Lien JS -->
+  <!-- JS -->
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
