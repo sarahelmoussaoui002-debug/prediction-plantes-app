@@ -29,7 +29,7 @@ body{
 }
 
 .top-logos img{
-  height: 150px;
+  height: 190px;
 }
 
 /* BLOC CENTRAL */
@@ -44,7 +44,7 @@ body{
 
 /* IMAGE AGROCALCULATOR */
 .hero-img{
-  width: min(1200px, 95vw);
+  width: min(1400px, 95vw);
   height: auto;
   display: block;
   margin: 0 auto;
