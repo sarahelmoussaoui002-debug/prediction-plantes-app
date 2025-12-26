@@ -45,11 +45,75 @@ body {
   gap: 10px;
 }
 
+/* ===== ARRIÈRE-PLAN ===== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  background: url("../img/background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* ===== BARRE DE LOGOS (SANS FLOU) ===== */
+.top-logos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;          /* hauteur suffisante pour grands logos */
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 50px;
+  box-sizing: border-box;
+
+  background: transparent;   /* PAS DE FLOU */
+}
+
+/* règle commune */
+.top-logos img {
+  width: auto;
+  object-fit: contain;
+}
+
+/* logos secondaires */
+.logo-labo,
+.logo-unif {
+  height: 120px;          /* GRAND */
+}
+
+/* logo principal */
+.logo-projet {
+  height: 160px;          /* TRÈS GRAND */
+}
+
+/* ===== CARTE CENTRALE ===== */
+.container {
+  max-width: 600px;
+  margin: 280px auto;     /* décale sous les logos */
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== FORMULAIRE ===== */
+.form {
+  display: grid;
+  gap: 10px;
+}
+
 input {
   padding: 10px;
   font-size: 16px;
 }
 
+/* ===== BOUTON ===== */
 button {
   margin-top: 10px;
   padding: 12px;
@@ -65,6 +129,7 @@ button:hover {
   background: #1e40af;
 }
 
+/* ===== RÉSULTATS ===== */
 pre {
   background: #eef2f7;
   padding: 12px;
