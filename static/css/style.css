@@ -29,13 +29,13 @@ body{
 }
 
 .top-logos img{
-  height: 190px;
+  height: 190px; /* (inchangé) */
 }
 
 /* BLOC CENTRAL */
 .hero{
   position: absolute;
-  top: 58%;
+  top: 62%; /* ✅ (modif nécessaire : descend légèrement) */
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -44,7 +44,7 @@ body{
 
 /* IMAGE AGROCALCULATOR */
 .hero-img{
-  width: min(1400px, 95vw);
+  width: min(1400px, 95vw); /* (inchangé) */
   height: auto;
   display: block;
   margin: 0 auto;
@@ -53,7 +53,7 @@ body{
 /* TEXTE SOUS LE TITRE */
 .hero-subtitle{
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 22px; /* ✅ (modif nécessaire : plus lisible avec grand titre) */
   color: #2f3e46;
   max-width: 750px;
   margin-left: auto;
@@ -65,12 +65,13 @@ body{
 .hero-cta{
   display: inline-block;
   margin-top: 22px;
-  padding: 12px 26px;
+  padding: 14px 32px;  /* ✅ (modif nécessaire : bouton plus visible) */
   background: #2563eb;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 700;
+  font-size: 18px;     /* ✅ (modif nécessaire) */
 }
 
 .hero-cta:hover{
