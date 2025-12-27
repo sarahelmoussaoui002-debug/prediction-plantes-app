@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>AgroCalculator</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1000">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
@@ -17,28 +15,23 @@
     <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université">
   </div>
 
-  <!-- BLOC CENTRAL -->
-  <div class="hero">
+  <!-- CONTENU CENTRAL -->
+  <main class="center-content">
 
-    <!-- IMAGE AGROCALCULATOR -->
     <img
       src="{{ url_for('static', filename='img/agrocalculator-title.png') }}"
       alt="AgroCalculator"
-      class="hero-img"
+      class="title-image"
     >
 
-    <!-- TEXTE -->
-    <p class="hero-subtitle">
-      AgroCalculator is an innovative digital tool designed<br>
-      to simplify agronomic measurements
+    <p class="subtitle">
+      AgroCalculator is an innovation digital tool designed to simplify agronomic measurements
     </p>
 
-    <!-- BOUTON VERS TABLEAU / PRÉDICTION -->
-    <a href="{{ url_for('tableau') }}" class="hero-cta">
-      CLICK HERE
-    </a>
+    <!-- BOUTON : OUVRE LA 2e PAGE -->
+    <a class="btn-start" href="{{ url_for('table') }}">CLICK HERE</a>
 
-  </div>
+  </main>
 
 </body>
 </html>
