@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tableau</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+  <div class="table-page">
+    <div class="table-header">
+      <a class="btn-start" href="{{ url_for('home') }}">← Retour</a>
+      <h1>Tableau</h1>
+    </div>
+
+    <div class="table-wrapper">
+      {{ table_html|safe }}
+    </div>
+  </div>
+
+</body>
+</html>
