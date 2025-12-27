@@ -1,3 +1,4 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,19 +6,15 @@
   <title>AgroCalculator</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-
 <body>
 
-  <!-- LOGOS EN HAUT -->
   <div class="top-logos">
     <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo">
     <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet">
     <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université">
   </div>
 
-  <!-- CONTENU CENTRAL -->
   <main class="center-content">
-
     <img
       src="{{ url_for('static', filename='img/agrocalculator-title.png') }}"
       alt="AgroCalculator"
@@ -25,12 +22,10 @@
     >
 
     <p class="subtitle">
-      AgroCalculator is an innovation digital tool designed to simplify agronomic measurements
+      Outil de simulation pour simplifier les mesures agronomiques et prédire des paramètres de croissance.
     </p>
 
-    <!-- BOUTON : OUVRE LA 2e PAGE -->
-    <a class="btn-start" href="{{ url_for('table') }}">CLICK HERE</a>
-
+    <a class="btn-start" href="{{ url_for('plant') }}">Commencer</a>
   </main>
 
 </body>

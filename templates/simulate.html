@@ -1,0 +1,162 @@
+<!-- templates/simulate.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulation – AgroCalculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    /* Styles locaux pour la page simulation (tu peux les déplacer dans style.css si tu veux) */
+    .sim-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    @media (max-width: 900px){ .sim-grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      background: rgba(255,255,255,0.92);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .field{ display:flex; flex-direction:column; gap:6px; margin-bottom: 12px; }
+    .field label{ font-weight: 700; color:#2f3e46; }
+    .field input{
+      height: 44px;
+      padding: 0 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      outline: none;
+    }
+    .field input:focus{ border-color: #f4b400; box-shadow: 0 0 0 3px rgba(244,180,0,0.18); }
+
+    .small-note{ color:#2f3e46; opacity:0.85; font-size: 14px; }
+    .error{ color:#b00020; font-weight: 700; }
+    .results-table{ width:100%; border-collapse: collapse; font-size: 14px; }
+    .results-table th, .results-table td{ border:1px solid #ddd; padding: 8px; }
+    .results-table th{ background:#f2f2f2; text-align:left; }
+  </style>
+</head>
+
+<body>
+
+  <div class="table-page">
+    <div class="table-header">
+      <a class="btn-start" href="{{ url_for('plant') }}">← Retour</a>
+      <h1>Simulation</h1>
+    </div>
+
+    <p class="subtitle" style="margin-bottom:16px;">
+      Plante sélectionnée : <strong>{{ plant }}</strong>
+    </p>
+
+    <div class="sim-grid">
+      <!-- Entrées -->
+      <div class="card">
+        <h2 style="margin-bottom:10px;">Entrées</h2>
+
+        <form id="predict-form">
+          <div class="field">
+            <label for="eau">Eau consommée</label>
+            <input id="eau" name="eau" type="number" step="any" placeholder="ex : 0.25" required>
+          </div>
+
+          <div class="field">
+            <label for="diametre">Diamètre</label>
+            <input id="diametre" name="diametre" type="number" step="any" placeholder="ex : 3.2" required>
+          </div>
+
+          <div class="field">
+            <label for="hauteur">Hauteur</label>
+            <input id="hauteur" name="hauteur" type="number" step="any" placeholder="ex : 18.0" required>
+          </div>
+
+          <p class="small-note">
+            NO₃ n’est pas demandé : il est fixé automatiquement par l’application.
+          </p>
+
+          <button class="btn-start" type="submit" style="margin-top:12px;">Prédire</button>
+          <p id="status" style="margin-top:10px;"></p>
+        </form>
+      </div>
+
+      <!-- Résultats -->
+      <div class="card">
+        <h2 style="margin-bottom:10px;">Résultats prédits</h2>
+
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Paramètre</th>
+              <th>Valeur</th>
+            </tr>
+          </thead>
+          <tbody id="results-body">
+            <tr>
+              <td colspan="2" class="small-note">Remplis le formulaire puis clique sur “Prédire”.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const form = document.getElementById("predict-form");
+  const statusEl = document.getElementById("status");
+  const resultsBody = document.getElementById("results-body");
+
+  function row(label, value) {
+    return `<tr><td>${label}</td><td>${value}</td></tr>`;
+  }
+
+  function formatNumber(x) {
+    const n = Number(x);
+    if (!Number.isFinite(n)) return String(x);
+    return n.toFixed(4); // ajuste si tu veux moins de décimales
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "";
+    statusEl.className = "";
+
+    const data = Object.fromEntries(new FormData(form));
+    // Convertit en nombres côté client (optionnel, le serveur re-valide)
+    data.eau = Number(data.eau);
+    data.diametre = Number(data.diametre);
+    data.hauteur = Number(data.hauteur);
+
+    statusEl.textContent = "Calcul en cours...";
+    try {
+      const res = await fetch("{{ url_for('predict') }}", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data),
+      });
+
+      const out = await res.json();
+
+      if (!res.ok) {
+        statusEl.textContent = out.error || "Erreur de prédiction.";
+        statusEl.className = "error";
+        return;
+      }
+
+      statusEl.textContent = "Prédiction terminée.";
+      statusEl.className = "";
+
+      resultsBody.innerHTML = [
+        row("Poids aérien frais (pds_af)", formatNumber(out.pds_af)),
+        row("Poids aérien sec (pds_as)", formatNumber(out.pds_as)),
+        row("Poids racinaire frais (pds_rf)", formatNumber(out.pds_rf)),
+        row("Poids racinaire sec (pds_rs)", formatNumber(out.pds_rs)),
+        row("Nombre de feuilles (nbr_f)", formatNumber(out.nbr_f)),
+        row("Surface foliaire (sf)", formatNumber(out.sf)),
+      ].join("");
+
+    } catch (err) {
+      statusEl.textContent = "Erreur réseau ou serveur.";
+      statusEl.className = "error";
+    }
+  });
+</script>
+
+</body>
+</html>
