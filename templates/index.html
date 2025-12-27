@@ -5,7 +5,7 @@
   <title>AgroCalculator</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1000">
 </head>
 
 <body>
@@ -17,17 +17,27 @@
     <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université">
   </div>
 
-  <!-- TITRE CENTRAL -->
+  <!-- BLOC CENTRAL -->
   <div class="hero">
+
+    <!-- IMAGE AGROCALCULATOR -->
     <img
       src="{{ url_for('static', filename='img/agrocalculator-title.png') }}"
       alt="AgroCalculator"
       class="hero-img"
     >
 
+    <!-- TEXTE -->
     <p class="hero-subtitle">
-      AgroCalculator is an innovation digital tool designed to simplify agronomic measurements
+      AgroCalculator is an innovative digital tool designed<br>
+      to simplify agronomic measurements
     </p>
+
+    <!-- BOUTON VERS TABLEAU / PRÉDICTION -->
+    <a href="{{ url_for('tableau') }}" class="hero-cta">
+      CLICK HERE
+    </a>
+
   </div>
 
 </body>
