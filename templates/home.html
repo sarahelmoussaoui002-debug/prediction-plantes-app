@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>AgroCalculator</title>
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=51">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body class="home">
+<body>
 
   <!-- LOGOS EN HAUT -->
   <div class="top-logos">
-    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Logo labo">
-    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Logo projet">
-    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Logo université">
+    <img src="{{ url_for('static', filename='img/logolabo.png') }}" alt="Labo">
+    <img src="{{ url_for('static', filename='img/logoprojet.png') }}" alt="Projet">
+    <img src="{{ url_for('static', filename='img/logounif.png') }}" alt="Université">
   </div>
 
-  <!-- CONTENU CENTRAL -->
-  <main class="hero">
-    <!-- Image AgroCalculator (nom correct) -->
+  <!-- ZONE CENTRALE -->
+  <div class="hero">
+
+    <!-- IMAGE AGROCALCULATOR -->
     <img
       src="{{ url_for('static', filename='img/agrocalculator-title.png') }}"
       alt="AgroCalculator"
       class="hero-img"
     >
 
+    <!-- TEXTE -->
     <p class="hero-subtitle">
-      AgroCalculator is an innovative digital tool designed<br>
-      to simplify agronomic measurements
+      AgroCalculator is an innovation digital tool designed to simplify agronomic measurements
     </p>
 
-    <a href="{{ url_for('tableau') }}" class="hero-cta">
-      CLICK HERE
-    </a>
-  </main>
+    <!-- BOUTON -->
+    <a href="/home" class="btn-image">
+  <img
+    src="{{ url_for('static', filename='img/button-click-here.png') }}"
+    alt="Click Here"
+  >
+</a>
+
+
+  </div>
 
 </body>
 </html>

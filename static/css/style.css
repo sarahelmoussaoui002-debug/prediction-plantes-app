@@ -1,79 +1,54 @@
 /* RESET */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* FOND — ON NE TOUCHE PLUS */
-body{
+/* FOND (ON NE TOUCHE PAS À TON IMAGE) */
+body {
   min-height: 100vh;
+  font-family: Arial, sans-serif;
   background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* LOGOS EN HAUT */
-.top-logos{
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
+/* SECTION CENTRALE */
+.hero {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  z-index: 20;
-}
-
-.top-logos img{
-  height: 190px; /* inchangé */
-}
-
-/* BLOC CENTRAL */
-.hero{
-  position: absolute;
-  top: 62%;              /* légèrement descendu */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;   /* centre verticalement */
+  align-items: center;       /* centre horizontalement */
   text-align: center;
-  z-index: 10;
+  padding-top: 60px;         /* fait descendre légèrement */
 }
 
-/* IMAGE AGROCALCULATOR */
-.hero-img{
-  width: min(1400px, 95vw); /* inchangé */
-  height: auto;
-  display: block;
-  margin: 0 auto;
+/* TITRE IMAGE */
+.hero-title {
+  width: 420px;              /* ajuste si besoin */
+  max-width: 90%;
+  margin-bottom: 20px;
 }
 
-/* TEXTE SOUS LE TITRE */
-.hero-subtitle{
-  margin-top: 20px;
-  font-size: 22px;        /* légèrement agrandi */
-  color: #2f3e46;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.4;
-}
-
-/* BOUTON */
-.hero-cta{
-  display: inline-block;
-  margin-top: 22px;
-  padding: 14px 32px;     /* légèrement agrandi */
-  background: #2563eb;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
+/* TEXTE SOUS TITRE */
+.hero-subtitle {
   font-size: 18px;
+  color: #2c2c2c;
+  max-width: 700px;
+  margin-bottom: 35px;
 }
 
-.hero-cta:hover{
-  background: #1e40af;
+/* BOUTON IMAGE */
+.btn-image img {
+  width: 260px;              /* taille du bouton */
+  max-width: 80%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-image img:hover {
+  transform: scale(1.05);
 }
