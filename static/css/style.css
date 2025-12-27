@@ -24,10 +24,11 @@ body {
   align-items: center;       /* centre horizontalement */
   text-align: center;
   padding-top: 60px;         /* fait descendre légèrement */
+  z-index: 10;
 }
 
-/* TITRE IMAGE */
-.hero-title {
+/* TITRE IMAGE (CORRIGÉ : hero-img au lieu de hero-title) */
+.hero-img {
   width: 420px;              /* ajuste si besoin */
   max-width: 90%;
   margin-bottom: 20px;
