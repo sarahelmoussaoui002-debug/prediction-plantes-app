@@ -1,6 +1,121 @@
-/* static/css/style.css
-   Tu peux garder ton CSS actuel et AJOUTER ces blocs à la fin.
-*/
+/* RESET */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FOND */
+body{
+  min-height: 100vh;
+  background-image: url("/static/img/background.png"); /* chemin robuste */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* LOGOS EN HAUT */
+.top-logos{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.top-logos img{
+  height: 70px;
+}
+
+/* CENTRE (HOME) */
+.center-content{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 20;
+}
+
+/* IMAGE TITRE */
+.title-image{
+  width: min(900px, 90vw);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* TEXTE */
+.subtitle{
+  margin-top: 20px;
+  font-size: 20px;
+  color: #2f3e46;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BOUTON */
+.btn-start{
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 30px;
+  background: #f4b400;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  cursor: pointer;
+}
+
+.btn-start:hover{
+  filter: brightness(0.95);
+}
+
+/* PAGE TABLEAU / PAGES "TYPE" */
+.table-page{
+  padding: 30px;
+}
+
+.table-header{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.table-wrapper{
+  background: rgba(255,255,255,0.92);
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+/* TABLE (si tu gardes /table) */
+.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th, .data-table td{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.data-table th{
+  background: #f2f2f2;
+}
+
+/* =========================
+   AJOUTS (TES BLOCS)
+   ========================= */
 
 /* Titres / pages */
 .page-title{
@@ -23,6 +138,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
+
 .choice-card{
   text-decoration: none;
   background: rgba(255,255,255,0.92);
@@ -31,15 +147,19 @@
   border: 1px solid rgba(0,0,0,0.06);
   box-shadow: 0 8px 18px rgba(0,0,0,0.10);
   color: #111;
+  transition: transform 0.12s ease;
 }
+
 .choice-card:hover{
   transform: translateY(-1px);
 }
+
 .choice-name{
   font-size: 22px;
   font-weight: 800;
   margin-bottom: 6px;
 }
+
 .choice-desc{
   color: #2f3e46;
   opacity: 0.9;
@@ -51,17 +171,20 @@
   position: relative;
   z-index: 2;
 }
+
 .sim-header{
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 18px;
 }
+
 .sim-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+
 .card{
   background: rgba(255,255,255,0.92);
   border-radius: 14px;
@@ -69,21 +192,25 @@
   border: 1px solid rgba(0,0,0,0.06);
   box-shadow: 0 8px 18px rgba(0,0,0,0.10);
 }
+
 .card-title{
   font-size: 18px;
   margin-bottom: 10px;
   color: #1f2a2e;
 }
+
 .form{
   display: grid;
   gap: 10px;
 }
+
 .form label{
   display: grid;
   gap: 6px;
   color: #1f2a2e;
   font-weight: 600;
 }
+
 .form input{
   height: 44px;
   padding: 10px 12px;
@@ -91,30 +218,37 @@
   border: 1px solid rgba(0,0,0,0.12);
   outline: none;
 }
+
 .form input:focus{
   border-color: rgba(0,0,0,0.25);
 }
+
 .status{
   margin-top: 8px;
   color: #1f2a2e;
   opacity: 0.85;
 }
+
 .result-wrap{
   overflow-x: auto;
 }
+
 .result-table{
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
 }
+
 .result-table th, .result-table td{
   border: 1px solid rgba(0,0,0,0.10);
   padding: 10px;
 }
+
 .result-table th{
   background: rgba(0,0,0,0.04);
   text-align: left;
 }
+
 .muted{
   color: #2f3e46;
   opacity: 0.8;

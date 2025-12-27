@@ -1,10 +1,14 @@
-<!-- templates/plant.html -->
+<!-- templates/plant.html (page 2 : choix plante) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Choix de la plante – AgroCalculator</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .choice-wrap{ max-width: 900px; margin: 0 auto; }
+    .choices{ display:flex; gap:16px; flex-wrap:wrap; }
+  </style>
 </head>
 <body>
 
@@ -14,15 +18,11 @@
       <h1>Choisissez une plante</h1>
     </div>
 
-    <div class="table-wrapper" style="max-width: 900px; margin: 0 auto;">
-      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+    <div class="table-wrapper choice-wrap">
+      <div class="choices">
         <a class="btn-start" href="{{ url_for('simulate') }}?plant=basilic">Basilic</a>
         <a class="btn-start" href="{{ url_for('simulate') }}?plant=laitue">Laitue</a>
       </div>
-
-      <p style="margin-top:16px; color:#2f3e46;">
-        Sélectionne une plante, puis entre tes mesures pour obtenir les paramètres prédits.
-      </p>
     </div>
   </div>
 
